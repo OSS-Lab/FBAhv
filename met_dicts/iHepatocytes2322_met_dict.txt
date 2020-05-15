@@ -1,0 +1,31 @@
+# metabolites ids for the iHepatocytes2322 model
+key in the program, id in the model, human-readable name, CHEBI id
+atp, m01371c, ATP, ChEBI 15422
+ctp, m01623c, CTP, ChEBI 17677
+gtp, m02034c, GTP, ChEBI 15996
+utp, m03130c, UTP, ChEBI 15713
+A, m01307c, Alaline, ChEBI 16977
+R, m01365c, Arginine, ChEBI 16467
+N, m01369c, Asparagine, ChEBI 17196
+D, m01370c, Aspartate, ChEBI 17053
+C, m01628c, Cysteine, ChEBI 17561
+Q, m01975c, Glutamine, ChEBI 18050
+E, m01974c, Glutamate, ChEBI 16015
+G, m01986c, Glycine, ChEBI 15428
+H, m02125c, Histidine, ChEBI 15971
+I, m02184c, Isoleucine, ChEBI 17191
+L, m02360c, Leucine, ChEBI 15603
+K, m02426c, Lysine, ChEBI 18019
+M, m02471c, Methionine, ChEBI 16643
+F, m02724c, Phenylalanine, ChEBI 17295
+P, m02770c, Proline, ChEBI 17203
+S, m02896c, Serine, ChEBI 17115
+T, m02993c, Threonine, ChEBI 16857
+W, m03089c, Tryptophan, ChEBI 16828
+Y, m03101c, Tyrosine, ChEBI 17895
+V, m03135c, Valine, ChEBI 16414
+h2o, m02040c, H2O,
+adp, m01285c, ADP,
+Pi, m02751c, Phosphate,
+h, m02039c, Hydrogen [Proton],
+PPi, m02759c, Pyrophosphate,

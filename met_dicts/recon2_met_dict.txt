@@ -1,0 +1,31 @@
+# metabolites ids for the recon 2_2 model
+key in the program, id in the model, human-readable name, CHEBI id
+atp, atp_c, ATP, ChEBI 15422
+ctp, ctp_c, CTP, ChEBI 17677
+gtp, gtp_c, GTP, ChEBI 15996
+utp, utp_c, UTP, ChEBI 15713
+A, ala_L_c, Alaline, ChEBI 16977
+R, arg_L_c, Arginine, ChEBI 16467
+N, asn_L_c, Asparagine, ChEBI 17196
+D, asp_L_c, Aspartate, ChEBI 17053
+C, cys_L_c, Cysteine, ChEBI 17561
+Q, gln_L_c, Glutamine, ChEBI 18050
+E, glu_L_c, Glutamate, ChEBI 16015
+G, gly_c, Glycine, ChEBI 15428
+H, his_L_c, Histidine, ChEBI 15971
+I, ile_L_c, Isoleucine, ChEBI 17191
+L, leu_L_c, Leucine, ChEBI 15603
+K, lys_L_c, Lysine, ChEBI 18019
+M, met_L_c, Methionine, ChEBI 16643
+F, phe_L_c, Phenylalanine, ChEBI 17295
+P, pro_L_c, Proline, ChEBI 17203
+S, ser_L_c, Serine, ChEBI 17115
+T, thr_L_c, Threonine, ChEBI 16857
+W, trp_L_c, Tryptophan, ChEBI 16828
+Y, tyr_L_c, Tyrosine, ChEBI 17895
+V, val_L_c, Valine, ChEBI 16414
+h2o, h2o_c, H2O,
+adp, adp_c, ADP,
+Pi, pi_c, Phosphate,
+h, h_c, Hydrogen [Proton],
+PPi, ppi_c, Pyrophosphate,

@@ -1,0 +1,31 @@
+# metabolites ids for the recon 2_LarsNielsen model
+key in the program, id in the model, human-readable name, CHEBI id
+atp, atp[c], ATP, ChEBI 15422
+ctp, ctp[c], CTP, ChEBI 17677
+gtp, gtp[c], GTP, ChEBI 15996
+utp, utp[c], UTP, ChEBI 15713
+A, ala_L[c], Alaline, ChEBI 16977
+R, arg_L[c], Arginine, ChEBI 16467
+N, asn_L[c], Asparagine, ChEBI 17196
+D, asp_L[c], Aspartate, ChEBI 17053
+C, cys_L[c], Cysteine, ChEBI 17561
+Q, gln_L[c], Glutamine, ChEBI 18050
+E, glu_L[c], Glutamate, ChEBI 16015
+G, gly[c], Glycine, ChEBI 15428
+H, his_L[c], Histidine, ChEBI 15971
+I, ile_L[c], Isoleucine, ChEBI 17191
+L, leu_L[c], Leucine, ChEBI 15603
+K, lys_L[c], Lysine, ChEBI 18019
+M, met_L[c], Methionine, ChEBI 16643
+F, phe_L[c], Phenylalanine, ChEBI 17295
+P, pro_L[c], Proline, ChEBI 17203
+S, ser_L[c], Serine, ChEBI 17115
+T, thr_L[c], Threonine, ChEBI 16857
+W, trp_L[c], Tryptophan, ChEBI 16828
+Y, tyr_L[c], Tyrosine, ChEBI 17895
+V, val_L[c], Valine, ChEBI 16414
+h2o, h2o[c], H2O,
+adp, adp[c], ADP,
+h, h[c], Hydrogen [Proton],
+Pi, pi[c], Phosphate,
+PPi, ppi[c], Pyrophosphate,
