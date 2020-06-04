@@ -27,6 +27,8 @@ reflects the RNA expression data from a specific tissue, from the human
 protein atlas project (https://www.proteinatlas.org/). In order to use it,
 use the `get_tissue-specific_stoichiometry.sh` script.
 
+The scripts have been used in the following article: hadrien delattre, Kalesh Sasidharan, orkun soyer. Inhibiting the reproduction of COVID-19-causing SARS-CoV-2 through perturbations in human cell metabolic network. Authorea. May 12, 2020. Preprint available [here](https://www.authorea.com/users/320517/articles/450169-inhibiting-the-reproduction-of-covid-19-causing-sars-cov-2-through-perturbations-in-human-cell-metabolic-network?commit=89649adb9538279fde8fde1413b75036fd36dee0).
+
 # License informations
 
 The analysis codes provided here are “AS IS" and covered under a BSD2 Licence.
