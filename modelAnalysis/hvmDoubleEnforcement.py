@@ -50,7 +50,7 @@ def hvmDoubleEnforcement(HVM,HostRxn,koVirus,fluxVarHost,fluxVarVirus,solver):
     nbofReactions = len(HVM.reactions)
     for ii in range(0,nbofReactions):
         # Conditional to exclude objective reactions and those that carry zero flux for virus optima
-        if ((ii!=hostIdx) and (ii!=virusIdx) and (virusSol.fluxes[ii]!=0.0) and (koVirus.virus_optima_KO[ii]!=0.0) and (not HVM.reactions[ii].id.startswith("EX_"))):
+        if ((ii!=hostIdx) and (ii!=virusIdx) and (virusSol.fluxes[ii]!=0.0) and (not HVM.reactions[ii].id.startswith("EX_"))):
             # Decide on what bounds to use based on FVA
             lbHost_A = fluxVarHost.minimum[ii]
             ubHost_A = fluxVarHost.maximum[ii]
@@ -58,14 +58,14 @@ def hvmDoubleEnforcement(HVM,HostRxn,koVirus,fluxVarHost,fluxVarVirus,solver):
             ubVirus_A = fluxVarVirus.maximum[ii]
             #the following is the default. It covers two cases; (ubHost<=ubVirus && lbHost<lbVirus) and (ubHost>ubVirus && lbHost<lbVirus)
             lowerbound_A = lbHost_A
-            upperbound_A = lbHost_A - (lbHost_A-lbVirus_A)/2
-            if (ubHost_A>ubVirus_A and lbHost_A>=lbVirus_A):
+            upperbound_A = lbHost_A + abs(lbHost_A - lbVirus_A) / 2
+            if ubHost_A>=ubVirus_A and lbHost_A>=lbVirus_A:
                 upperbound_A = ubHost_A
-                lowerbound_A = ubHost_A - (ubHost_A-ubVirus_A)/2
-            if (ubHost_A<ubVirus_A and lbHost_A>lbVirus_A):
+                lowerbound_A = ubHost_A - abs(ubHost_A - ubVirus_A) / 2
+            if ubHost_A <= ubVirus_A and lbHost_A >= lbVirus_A:
                 lowerbound_A = lbHost_A
                 upperbound_A = ubHost_A
-            if lbHost_A == lbVirus_A and ubHost_A == ubHost_A:
+            if lbHost_A == lbVirus_A and ubHost_A == ubVirus_A:
                 pass
             else:
                 # Store the bounds for rxn A
@@ -76,7 +76,7 @@ def hvmDoubleEnforcement(HVM,HostRxn,koVirus,fluxVarHost,fluxVarVirus,solver):
                 HVM.reactions[ii].upper_bound = upperbound_A
                 for jj in range(ii+1,nbofReactions):
                     # Conditional to exclude objective reactions and reactions that carry zero flux for virus optima and reactions that gave zero flux when knocked out on their own
-                    if ((jj!=hostIdx) and (jj!=virusIdx) and (virusSol.fluxes[jj]!=0.0) and (koVirus.virus_optima_KO[jj]!=0.0) and (not HVM.reactions[jj].id.startswith("EX_"))):
+                    if ((jj!=hostIdx) and (jj!=virusIdx) and (virusSol.fluxes[jj]!=0.0) and (not HVM.reactions[jj].id.startswith("EX_"))):
                         print("Double enforcement: \t%i\t%s\t%i\t%s" % (ii, HVM.reactions[ii].id, jj, HVM.reactions[jj].id))
                         # Store reaction info
                         reactionA_Index.append(ii)
@@ -93,14 +93,14 @@ def hvmDoubleEnforcement(HVM,HostRxn,koVirus,fluxVarHost,fluxVarVirus,solver):
                         ubVirus_B = fluxVarVirus.maximum[jj]
                         #the following is the default. It covers two cases; (ubHost<=ubVirus && lbHost<lbVirus) and (ubHost>ubVirus && lbHost<lbVirus)
                         lowerbound_B = lbHost_B
-                        upperbound_B = lbHost_B - (lbHost_B-lbVirus_B)/2
-                        if (ubHost_B>ubVirus_B and lbHost_B>=lbVirus_B):
+                        upperbound_B = lbHost_B + abs(lbHost_B - lbVirus_B) / 2
+                        if (ubHost_B >= ubVirus_B and lbHost_B >= lbVirus_B):
                             upperbound_B = ubHost_B
-                            lowerbound_B = ubHost_B - (ubHost_B-ubVirus_B)/2
-                        if (ubHost_B<ubVirus_B and lbHost_B>lbVirus_B):
+                            lowerbound_B = ubHost_B - abs(ubHost_B - ubVirus_B) / 2
+                        if (ubHost_B <= ubVirus_B and lbHost_B >= lbVirus_B):
                             lowerbound_B = lbHost_B
                             upperbound_B = ubHost_B
-                        if lbHost_B == lbVirus_B and ubHost_B == ubHost_B:
+                        if lbHost_B == lbVirus_B and ubHost_B == ubVirus_B:
                             doubleKO_optima.append(np.nan)
                         else:
                             # Alter bounds of rxn B to value chosen

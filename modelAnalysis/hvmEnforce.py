@@ -110,6 +110,6 @@ def hvmEnforce(HVM,HostRxn,fluxVarHost,fluxVarVirus,solver):
         enfVirus[ii,4] = (enfVirus[ii,4] / virusSol.objective_value) * 100
 
     # [4] Output
-    outputDf = pd.DataFrame(data=enfVirus, columns=["index", "host flux", "virus flux", "virus optimum Enf HOS", "virus optimum Enf HOS FVA"])
+    outputDf = pd.DataFrame(data=enfVirus, columns=["index", "rxn flux when host optimized", "rxn flux when virus optimized", "virus optimum when flux is optimal for host", "virus optimum when boundaries are enforced"])
     outputDf = outputDf.assign(name=reactionNames)
     return outputDf
